@@ -1,19 +1,49 @@
-# 4. Which class represents the group of characters?
+# Program 1: Count upper and lower case letters
 
-my_string = "Hello, World!"
-print("This is a string of type:", type(my_string))  # Output: <class 'str'>
+def count_case_letters(s):
+    upper = sum(1 for c in s if c.isupper())
+    lower = sum(1 for c in s if c.islower())
+    print("Uppercase letters:", upper)
+    print("Lowercase letters:", lower)
 
+# Program 2: Check palindrome
 
-# 5. What is slicing?
-my_list = [10, 20, 30, 40, 50]
-print("Slicing from index 1 to 3:", my_list[1:4])  # Output: [20, 30, 40]
+def is_palindrome(s):
+    return s == s[::-1]
 
-my_string = "Python"
-print("Slicing string from index 0 to 2:", my_string[0:3])  # Output: Pyt
+# Program 3: Return n copies of first 2 characters
 
+def multiple_first_two(s):
+    return s[:2] * len(s)
 
-# 6. Which function toggles the cases?
+# Program 4: Remove 'x' from beginning and end
 
-text = "Hello WoRLD"
-toggled = text.swapcase()
-print("Toggled case:", toggled) 
+def remove_x(s):
+    if s.startswith('x'):
+        s = s[1:]
+    if s.endswith('x'):
+        s = s[:-1]
+    return s
+
+# Program 5: Return n repetitions of last n characters
+
+def repeat_last_n(s, n):
+    return s[-n:] * n
+
+# Example test cases
+if __name__ == "__main__":
+    print("Program 1:")
+    count_case_letters("Hello World")
+
+    print("\nProgram 2:")
+    print("madam is palindrome:", is_palindrome("madam"))
+    print("hello is palindrome:", is_palindrome("hello"))
+
+    print("\nProgram 3:")
+    print(multiple_first_two("Wipro"))  # Output: WiWiWiWiWi
+
+    print("\nProgram 4:")
+    print(remove_x("xHix"))  # Output: Hi
+
+    print("\nProgram 5:")
+    print(repeat_last_n("Wipro", 3))  # Output: propropro
